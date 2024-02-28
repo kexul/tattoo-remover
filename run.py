@@ -33,6 +33,7 @@ for img_file in os.listdir(input_dir):
         image_path = os.path.join(input_dir, img_file)
         full_path = os.path.join(os.getcwd(), image_path)
         image = Image.open(full_path)
+        image = image.convert('RGB')
         input = image_transforms(image)
         input = torch.unsqueeze(input, 0)
 
